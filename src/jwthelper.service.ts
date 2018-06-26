@@ -1,6 +1,7 @@
 // tslint:disable:no-bitwise
 
-import { Injectable, Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+
 import { JWT_OPTIONS } from './jwtoptions.token';
 
 @Injectable()
@@ -120,7 +121,7 @@ export class JwtHelperService {
     offsetSeconds = offsetSeconds || 0;
 
     if (date === null) {
-      return true;
+      return false;
     }
 
     return !(date.valueOf() > new Date().valueOf() + offsetSeconds * 1000);
